@@ -1,0 +1,285 @@
+/* <-- comment (.css file)(css/base.css) */
+/* <-- comment (.css file)(css/base.css) */
+:root {
+    --bg-dark: #181a1f; 
+    --bg-section: #282c34; 
+    --bg-card-hover: #3a3f4b; 
+
+    --text-light: #e6e6e6; 
+    --text-medium: #a0a0a0; 
+    --text-dark: #707070;  
+
+    --border-dark: #4a4e58;  
+    --border-medium: #383c44; 
+
+    --accent-cyan-neon: #00f2ff; 
+    --accent-cyan-glow: rgba(0, 242, 255, 0.3); 
+    --accent-purple-neon: #a020f0; 
+    --accent-purple-glow: rgba(160, 32, 240, 0.3);
+
+    --accent-pink: #ff00ff; 
+    --accent-red-error: #ff3333; 
+    
+    --shadow-light: 0 3px 8px rgba(0, 0, 0, 0.2); 
+    --shadow-lifted: 0 6px 20px rgba(0, 0, 0, 0.35); 
+
+    --font-main: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-code: 'Fira Code', 'Courier New', Courier, monospace;
+    
+    --navbar-height: 100px; 
+    --content-padding-top: 20px; 
+    --content-padding-bottom: 20px; /* Space at the bottom of views before footer */
+    --view-internal-padding-top: 20px; /* Padding at the top inside each view */
+}
+body {
+    font-family: var(--font-main);
+    margin: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.7; 
+    overflow-x: hidden; /* Prevent horizontal scroll on body */
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; /* Body takes at least full viewport height */
+    position: relative; /* Needed for pseudo-element */
+}
+
+/* --- FANCY: Subtle Scanline Overlay --- */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0) 0px,
+        rgba(0, 0, 0, 0) 2px,
+        rgba(255, 255, 255, 0.04) 3px,
+        rgba(255, 255, 255, 0.04) 4px
+    );
+    z-index: -1; /* Place it behind all content */
+    pointer-events: none; /* Make it unclickable */
+}
+
+.main-content-area { 
+    flex-grow: 1; /* Allows this area to expand and push footer down */
+    box-sizing: border-box;
+    display: flex; /* It's a flex container for its child (the active .view) */
+    flex-direction: column; /* Stack views vertically (though only one is active) */
+    padding-top: var(--content-padding-top); /* Space below navbar */
+    width: 100%; 
+}
+
+/* Generic Headings and Elements */
+h2 { 
+    text-align: center;
+    font-size: 2em; 
+    margin-top: 0; 
+    margin-bottom: 1.8em; 
+    border-bottom: 1px solid var(--border-medium);
+    padding-bottom: 15px;
+    color: var(--accent-cyan-neon); 
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: default; 
+    transition: text-shadow 0.3s ease, color 0.3s ease; 
+    text-shadow: 0 0 5px var(--accent-cyan-glow); /* FANCY: Add a default subtle glow */
+}
+
+h2:hover {
+    color: #ffffff; 
+    text-shadow: 
+        0 0 8px var(--accent-cyan-glow),    
+        0 0 15px var(--accent-cyan-glow),   
+        0 0 25px var(--accent-cyan-neon),  
+        0 0 40px var(--accent-cyan-neon);  
+}
+
+
+h2 .icon {
+    margin-right: 12px;
+    color: var(--accent-pink); 
+}
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 1.2em;
+    color: var(--text-light);
+    font-weight: 500;
+}
+h4 {
+    font-size: 1.15em;
+    margin-bottom: 0.8em;
+    color: var(--text-medium);
+    margin-top: 2em;
+    font-weight: 500;
+}
+pre {
+    background-color: #1c1e22; 
+    border: 1px solid var(--border-medium);
+    padding: 20px;
+    border-radius: 4px; 
+    font-family: var(--font-code);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #9fdda0; 
+    font-size: 0.9em;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+    margin-top: 15px;
+}
+ul {
+    margin-left: 0;
+    list-style: none;
+    padding-left: 0;
+}
+li {
+    position: relative;
+    padding-left: 25px; 
+    margin-bottom: 10px;
+    transition: color 0.3s ease; /* FANCY: Add transition for hover effect */
+}
+li::before { 
+    content: '›';
+    position: absolute;
+    left: 5px;
+    color: var(--accent-cyan-neon);
+    font-weight: bold;
+    font-size: 1.2em;
+    top: -1px;
+    transition: text-shadow 0.3s ease; /* FANCY: Add transition for hover effect */
+}
+/* FANCY: Add a glow effect to list items on hover */
+li:hover {
+    color: #fff;
+}
+li:hover::before {
+    text-shadow: 0 0 8px var(--accent-cyan-glow);
+}
+code { 
+    background-color: #333842;
+    padding: 3px 7px;
+    border-radius: 3px;
+    font-family: var(--font-code);
+    font-size: 0.9em;
+    color: var(--accent-cyan-neon);
+}
+
+/* --- Global Focus Styling --- */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--accent-cyan-neon);
+    outline-offset: 3px; 
+    box-shadow: 0 0 8px var(--accent-cyan-glow); 
+}
+a, button, [tabindex]:not([tabindex="-1"]), input, select, textarea {
+    outline: none; 
+}
+
+
+/* --- FANCY: Upgraded Section Container with Depth and Glow --- */
+.section-container { 
+    /* Gradient for depth */
+    background: radial-gradient(ellipse at center, #30353e, var(--bg-section));
+    
+    /* Gradient border */
+    border: 2px solid transparent;
+    border-image: linear-gradient(to bottom right, var(--accent-cyan-neon), var(--accent-purple-neon)) 1;
+
+    padding: 30px 35px; 
+    box-shadow: var(--shadow-light), inset 0 0 15px rgba(0,0,0,0.4); /* Inner shadow for depth */
+    border-radius: 6px; 
+    width: 100%; 
+    box-sizing: border-box;
+    position: relative; 
+    outline: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+/* Add an interactive glow on hover */
+.section-container:hover {
+    box-shadow: 0 0 20px -5px var(--accent-purple-glow), inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+.section-container:focus-visible, 
+.game-card:focus-visible {         
+    outline: none; 
+}
+
+/* View Styling (General) */
+.view {
+    display: none; 
+    animation: fadeInView 0.4s ease-out; 
+    width: 100%; 
+    max-width: 1600px;
+    margin: 0 auto;
+    flex-grow: 1;
+    padding: var(--view-internal-padding-top) 20px var(--content-padding-bottom) 20px; 
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.view.active-view {
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes fadeInView {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Global Hover/Lift Effect */
+.hover-lift-card {
+    transform: scale(1); 
+    box-shadow: var(--shadow-light); 
+    z-index: 1; 
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, z-index 0s linear 0.2s;
+    backface-visibility: hidden; 
+    position: relative; 
+    border-radius: 4px; 
+}
+
+.hover-lift-card:hover { 
+    transform: translateY(-5px) scale(1.02); /* Modified for a more subtle lift */
+    box-shadow: var(--shadow-lifted); 
+    z-index: 10; 
+    transition-delay: 0s; 
+}
+
+.hover-lift-card:focus-visible { 
+    transform: translateY(-5px) scale(1.02); 
+    box-shadow: var(--shadow-lifted); 
+    z-index: 10; 
+    transition-delay: 0s; 
+}
+
+
+/* --- FANCY: New Reusable Card Style --- */
+.fancy-card {
+    background: radial-gradient(ellipse at center, #383c44, #21252b);
+    border: 2px solid transparent;
+    border-image: linear-gradient(to bottom, var(--accent-cyan-neon), var(--accent-purple-neon)) 1;
+    border-radius: 8px;
+    padding: 20px 25px;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.fancy-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lifted);
+}
+
+
+#pvb-view .section-container > p,
+#mockups-view .section-container > p {
+    min-height: 200px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-medium);
+}
+/* <-- end comment (.css file)(css/base.css) */
+/* <-- end comment (.css file)(css/base.css) */

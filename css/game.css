@@ -1,0 +1,45 @@
+/* <-- comment (.css file)(css/game.css) */
+/* css/game.css */
+
+/* This now styles the iframe */
+#game-iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove default iframe border */
+    border-radius: 6px; /* Match the container's rounding */
+    background-color: #000;
+}
+
+/* This is the container for the iframe, needed for positioning the button */
+.game-card {
+    position: relative;
+    /* Other styles are in css/options/game-view.css */
+}
+
+.game-controls {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    display: flex;
+    gap: 5px;
+    z-index: 10;
+}
+
+.game-controls button {
+    background-color: rgba(40, 44, 52, 0.8); /* var(--bg-section) with alpha */
+    border: 1px solid var(--border-medium);
+    color: var(--text-medium);
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.game-controls button:hover {
+    background-color: var(--bg-card-hover);
+    color: var(--text-light);
+}
+/* <-- end comment (.css file)(css/game.css) */

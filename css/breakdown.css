@@ -1,0 +1,58 @@
+.user-stories-details-container h3 {
+    background-color: var(--accent-purple-dark); /* Use theme color */
+    color: var(--accent-cyan);
+    padding: 12px 18px;
+    border-radius: 6px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    position: relative;
+}
+.user-stories-details-container h3::after {
+    content: '▼'; /* Use different arrow */
+    display: block;
+    margin-top: 8px;
+    color: var(--accent-cyan);
+    font-size: 1.2em;
+    opacity: 0.8;
+}
+.story-breakdown {
+    margin-bottom: 40px;
+}
+.story-breakdown .steps {
+    display: flex;
+    flex-direction: column; /* Stack steps */
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px; /* Add space below title */
+    padding: 25px;
+    border: 1px solid var(--border-medium);
+    border-radius: 8px;
+    background-color: rgba(0,0,0,0.15);
+    position: relative; /* For arrows */
+}
+.story-breakdown .step {
+    background-color: #4e4e6a; /* Match later story color */
+    color: var(--text-light);
+    border: 1px solid #3e3e5a;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 0.95em;
+    text-align: center;
+    width: 85%; /* Adjust width */
+    max-width: 600px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    position: relative; /* For arrow positioning */
+}
+.story-breakdown .step:not(:last-child)::after {
+    content: '↓';
+    position: absolute;
+    bottom: -16px; /* Position below */
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--accent-blue);
+    font-size: 1.8em;
+    z-index: 0;
+    opacity: 0.6;
+}

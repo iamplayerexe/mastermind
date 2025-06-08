@@ -1,0 +1,62 @@
+# The name of our workflow, which will appear in the "Actions" tab of your repo
+name: Deploy to GitHub Pages
+
+# This workflow runs automatically on any push to the 'main' branch
+on:
+  push:
+    branches:
+      - main  # Change to 'master' if that's your default branch
+
+# These permissions are essential for the workflow to deploy to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# This prevents multiple runs of the same workflow from overlapping
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # A single job called 'deploy'
+  deploy:
+    # Use the latest version of Ubuntu as the operating environment
+    runs-on: ubuntu-latest
+    
+    # Define the sequence of steps for the job
+    steps:
+      # Step 1: Check out your repository's code so the workflow can access it
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up the Node.js environment, which includes npm
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # Use a stable version of Node.js
+
+      # Step 3: Install all dependencies from package.json (like rimraf and cpx)
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run the build command defined in package.json
+      # This creates the 'dist' folder with all your website files.
+      - name: Build project
+        run: npm run build
+
+      # Step 5: Configure the GitHub Pages deployment
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      # Step 6: Upload the 'dist' folder as a deployment artifact
+      # GitHub knows to look for this artifact to serve your site.
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist # The path to the folder to upload
+
+      # Step 7: Deploy the uploaded artifact to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,41 @@
+/* <-- comment (.css file)(css/options/mockups-view.css) */
+
+#mockups-view.active-view {
+    justify-content: flex-start; /* Content (section-container) aligns to the top */
+    align-items: stretch; /* Allows section-container to take full width up to view's max-width */
+}
+
+#mockups-view .section-container {
+    width: 100%; /* MODIFIED: Section container takes full available width of the view's padded area */
+    /* max-width: 100%; /* Implicitly handled by parent view's max-width and padding */
+    /* width: max-content; /* REMOVED */
+    
+    margin: 0 auto var(--content-padding-bottom) auto; 
+    box-sizing: border-box;
+    /* overflow-x: auto; /* REMOVED: The gallery inside will scroll, not this main card */
+    overflow-y: hidden; /* Optional: if content like h2 + gallery could barely exceed some desired fixed height */
+    padding: 25px 30px; /* Adjusted padding */
+    display: flex; /* ADDED: to allow h2 and gallery to stack nicely */
+    flex-direction: column; /* ADDED: stack h2 and gallery vertically */
+}
+
+#mockups-view .section-container > h2 {
+    margin-top: 0;
+    margin-bottom: 20px; /* Space between title and gallery */
+    text-align: center; 
+    width: 100%; 
+    flex-shrink: 0; /* Prevent title from shrinking */
+}
+
+#mockups-view .section-container > p { /* Placeholder text styling, if used */
+    min-height: 200px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-medium);
+    width: 100%; /* Ensure placeholder also takes width */
+}
+
+/* The .mockup-gallery inside this section will handle its own horizontal scroll */
+/* Its styles are in css/mockups.css */
+/* <-- end comment (.css file)(css/options/mockups-view.css) */

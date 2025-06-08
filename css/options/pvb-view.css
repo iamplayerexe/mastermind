@@ -1,0 +1,28 @@
+/* <-- comment (.css file)(css/options/pvb-view.css) */
+
+#pvb-view.active-view {
+    justify-content: flex-start;
+    align-items: stretch; 
+    padding-top: var(--content-padding-top); /* Ensure view itself has some top padding */
+    padding-bottom: var(--content-padding-bottom);
+}
+
+#pvb-view .section-container { 
+    width: 100%; 
+    max-width: 1400px; 
+    margin: 10px auto 0 auto; /* MODIFIED: Added 10px top margin, bottom margin handled by view padding */
+    box-sizing: border-box;
+}
+
+#pvb-view .section-container > h2 {
+    margin-top: 0;
+}
+
+#pvb-view .section-container > p { 
+    min-height: 200px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-medium);
+}
+/* <-- end comment (.css file)(css/options/pvb-view.css) */

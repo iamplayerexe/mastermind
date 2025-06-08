@@ -1,0 +1,66 @@
+.tech-notes-container .notes-columns {
+    display: flex;
+    gap: 45px;
+    margin-top: 25px;
+}
+.tech-notes-container .note-column {
+    flex: 1;
+    background: rgba(0,0,0,0.1);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border-medium);
+}
+.tech-notes-container h4 {
+    border-bottom: 1px solid var(--border-medium);
+    padding-bottom: 8px;
+    margin-bottom: 1em;
+}
+.dev-example {
+    border: 1px dashed var(--border-medium);
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background: #1f2b4a;
+}
+.dev-example pre {
+    background: #0f1a2a;
+    margin: 0;
+    font-size: 0.9em;
+}
+.dev-example ul {
+    margin-top: 10px;
+}
+
+/* Data Type Display Styling */
+#data-types-display dl {
+    margin: 0;
+    padding: 0;
+}
+#data-types-display .data-type-item {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted var(--border-dark);
+}
+#data-types-display .data-type-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+#data-types-display dt {
+    font-family: var(--font-code);
+    font-weight: 600;
+    color: var(--accent-cyan);
+    font-size: 1.05em;
+    margin-bottom: 3px; /* Space before description */
+}
+#data-types-display dd {
+    margin-left: 15px;
+    font-size: 0.9em;
+    color: var(--text-medium);
+    font-style: italic;
+}
+#data-types-display hr { /* Style separators if used */
+    border-color: var(--border-dark);
+    opacity: 0.5;
+    margin: 15px 0;
+    border-style: dashed;
+}

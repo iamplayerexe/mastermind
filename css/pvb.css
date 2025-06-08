@@ -1,0 +1,87 @@
+/* <-- comment (.css file)(css/pvb.css) */
+/* <-- comment (.css file)(css/pvb.css) */
+#pvb-card-container {
+    display: flex;
+    gap: 25px;
+    padding: 10px 5px 20px 5px;
+    margin-top: 15px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: flex-start;
+    
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-cyan-neon) var(--bg-dark);
+}
+
+#pvb-card-container::-webkit-scrollbar {
+    height: 12px;
+}
+#pvb-card-container::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+    border-radius: 10px;
+    border: 1px solid var(--border-medium);
+}
+#pvb-card-container::-webkit-scrollbar-thumb {
+    background-color: var(--accent-cyan-neon);
+    border-radius: 10px;
+    border: 2px solid var(--bg-dark);
+}
+#pvb-card-container::-webkit-scrollbar-thumb:hover {
+    background-color: #fff;
+    box-shadow: 0 0 8px var(--accent-cyan-glow);
+}
+
+/* Styling for each individual card's LAYOUT */
+.pvb-card {
+    flex-shrink: 0;
+    width: 350px; /* This is a layout property */
+    max-width: 80vw;
+    /* Visual styles like background, border, padding, etc., are now in the .fancy-card class */
+}
+
+/* These styles are specific to the content INSIDE a PVB card */
+.pvb-card h3 {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    padding-bottom: 10px;
+    font-size: 1.25em;
+    color: var(--accent-cyan-neon);
+    border-bottom: 1px solid var(--border-medium);
+    text-align: center;
+}
+.pvb-card p {
+    font-size: 1.05em;
+    text-align: center;
+    color: var(--text-light);
+}
+.pvb-card ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+.pvb-card li {
+    padding-left: 28px;
+    margin-bottom: 14px;
+    position: relative;
+    line-height: 1.6;
+}
+.pvb-card li::before {
+    content: '▪';
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    color: var(--accent-purple-neon);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.pvb-card li.sub-item {
+    margin-left: 20px;
+    font-size: 0.95em;
+    color: var(--text-medium);
+}
+.pvb-card li.sub-item::before {
+    content: '–';
+    color: var(--text-dark);
+}
+/* <-- end comment (.css file)(css/pvb.css) */
+/* <-- end comment (.css file)(css/pvb.css) */

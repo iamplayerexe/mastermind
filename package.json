@@ -1,0 +1,15 @@
+{
+  "name": "mastermind-dashboard",
+  "version": "1.0.0",
+  "description": "A dashboard for the Mastermind game project.",
+  "scripts": {
+    "build": "echo 'Build process started...' && rimraf ./dist && cpx \"{*.html,Mastermind.html,mockup-*.jpeg,css/**/*,js/**/*}\" dist && echo 'Build complete!'",
+    "deploy": "git push origin main"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "rimraf": "^5.0.7"
+  }
+}

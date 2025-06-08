@@ -1,0 +1,252 @@
+.usm-container {
+    position: relative;
+    padding: 25px 40px 50px 40px;
+}
+.usm-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+    top: -5px;
+    padding: 0 10px;
+}
+.title-usm {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-light);
+}
+.time-axis {
+    font-weight: 600;
+    color: var(--text-medium);
+    position: static;
+}
+.map-grid-wrapper {
+    margin-top: 15px;
+    position: relative;
+    overflow-x: auto;
+    padding: 15px; /* Add padding around the grid */
+    padding-left: 40px; /* Space for priority */
+    padding-right: 65px; /* Space for labels */
+    border: 1px solid var(--border-medium);
+    border-radius: 8px;
+    background: #1f2b4a; /* Darker background for map area */
+    display: flex;
+}
+.story-map-grid {
+    display: grid;
+    gap: 8px; /* Gap between cards */
+    position: relative;
+    width: max-content;
+    padding: 5px; /* Small padding inside grid */
+    border: none;
+    flex-grow: 1;
+}
+.labels {
+    position: absolute;
+    right: 10px;
+    top: 20px; /* Align with wrapper padding */
+    width: 55px;
+    z-index: 10;
+    text-align: center;
+}
+.label-theme, .label-epic, .label-story {
+    font-weight: 600;
+    color: var(--accent-pink);
+    margin-bottom: 40px; /* Adjust spacing */
+    font-size: 0.9em;
+}
+.label-theme { margin-top: 0px; }
+.label-epic { margin-top: 10px; }
+.label-story { margin-top: 10px; }
+.priority-axis-container {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    width: 20px;
+    z-index: 10;
+}
+.priority-axis {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-weight: 600;
+    color: var(--text-medium);
+    text-align: center;
+    white-space: nowrap;
+}
+.footer-logo {
+    position: absolute;
+    bottom: 15px;
+    right: 70px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: var(--text-medium);
+    opacity: 0.7;
+}
+.note {
+    font-size: 0.85em;
+    color: var(--text-medium);
+    margin-top: 20px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Grid Separator Row Style */
+.grid-separator {
+    grid-column: 1 / -1;
+    height: 1px;
+    background-color: var(--border-medium); /* Match border color */
+    opacity: 0.6; /* Make it slightly less prominent */
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    z-index: 1; /* Behind items */
+}
+
+/* Item Styles */
+.map-item {
+    border: 1px solid #000;
+    padding: 8px 12px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    min-height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    position: relative;
+    z-index: 5; /* Above separators */
+    white-space: nowrap;
+    cursor: default;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    color: var(--text-light);
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.map-item.clickable:hover {
+    cursor: pointer;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.6);
+}
+.theme {
+    background-color: var(--accent-purple-dark);
+    border-color: #2e2540;
+    font-weight: 700;
+    min-height: 24px;
+    font-size: 12.5px;
+    /* grid-row set by JS */
+}
+.epic {
+    background-color: var(--accent-purple);
+    border-color: #433A5F;
+    font-weight: 600;
+    min-height: 24px;
+    font-size: 12px;
+     /* grid-row set by JS */
+}
+.story {
+    background-color: var(--accent-grey);
+    border-color: #3e3e5a;
+    /* grid-row set by JS */
+}
+
+/* Version-Specific Styles */
+#story-map-grid-versions .story.mvp {
+    background-color: var(--accent-yellow-bg);
+    border-color: var(--accent-yellow);
+    border-left-width: 4px;
+}
+#story-map-grid-versions .story.v2 {
+    background-color: var(--accent-green-bg);
+    border-color: var(--accent-green);
+    border-left-width: 4px;
+}
+#story-map-grid-versions .story.later {
+    background-color: var(--accent-grey);
+    border-color: #4e4e6a;
+    opacity: 0.7;
+}
+
+/* MVP Lines */
+.mvp-line {
+    position: absolute;
+    left: 40px;
+    right: 65px;
+    height: 1.5px;
+    background-color: var(--accent-pink); /* Use pink for lines */
+    opacity: 0.7;
+    border: none;
+    z-index: 6; /* Above items slightly */
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--accent-pink);
+    white-space: nowrap;
+    display: none;
+}
+.mvp-line::after {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-section);
+    padding: 2px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--accent-pink);
+}
+
+/* NFR Map Specific Styles */
+.nfr-map-container .map-grid-wrapper { padding-left: 10px; }
+.nfr-wrapper {} /* Wrapper class for NFR map layout */
+.nfr-column-container {
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+    padding-top: 5px;
+    border-right: 1px solid var(--border-medium);
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+.nfr-header {
+    font-weight: 600;
+    color: var(--text-medium);
+    text-align: center;
+    padding: 8px;
+    margin-bottom: 41px; /* Aligns roughly below theme separator */
+    font-size: 12px;
+    min-height: 24px; /* Match epic height */
+    background: #1f2b4a; /* Match wrapper background */
+    border-radius: 4px;
+}
+.nfr-items-map {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px; /* Match story gap */
+    align-content: start;
+}
+.nfr-item {
+    background-color: #3a4b5c; /* Slightly different background */
+    border: 1px solid #2a3947;
+    color: var(--text-light);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 21px; /* Match story height */
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+#story-map-grid-nfr { padding-left: 0; }
+.nfr-map-container .labels { right: 10px; }
+.nfr-map-container .priority-axis-container { display: none; }
+.nfr-map-container .footer-logo { right: 70px; }
+.nfr-map-container .label-epic { margin-top: 10px; }
+.nfr-map-container .label-story { margin-top: 10px; }

@@ -1,0 +1,50 @@
+/* <-- comment (.css file)(css/options/game-view.css) */
+/* <-- comment (.css file)(css/options/game-view.css) */
+
+#game-view.active-view { 
+    justify-content: center; 
+    align-items: center;   
+    /* padding-bottom from general .view style via --content-padding-bottom */
+}
+
+.game-card { 
+    /* FANCY: Gradient background for depth */
+    background: radial-gradient(ellipse at center, #30353e, var(--bg-section));
+    
+    /* FANCY: Gradient border to match other fancy elements */
+    border: 2px solid transparent;
+    border-image: linear-gradient(to bottom, var(--accent-cyan-neon), var(--accent-purple-neon)) 1;
+
+    border-radius: 10px;
+    padding: 15px; 
+    
+    width: 480px;  
+    height: 540px; 
+
+    max-width: 90vw; 
+    overflow: hidden; 
+    box-shadow: var(--shadow-light), inset 0 0 15px rgba(0,0,0,0.4); /* Inner shadow for depth */
+    text-align: center;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: stretch;
+    margin-top: 0; 
+    margin-bottom: 0; 
+    outline: none; 
+    position: relative; 
+    transition: all 0.3s ease; /* Transition for hover effects */
+}
+
+/* FANCY: Add an interactive glow on hover */
+.game-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px -5px var(--accent-cyan-glow), inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* When the game card is in fullscreen, ensure the iframe within it expands fully */
+.game-card:fullscreen #game-iframe {
+    height: 100%;
+}
+/* <-- end comment (.css file)(css/options/game-view.css) */
+/* <-- end comment (.css file)(css/options/game-view.css) */

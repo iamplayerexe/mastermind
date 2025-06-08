@@ -1,0 +1,16 @@
+/* <-- comment (.css file)(css/footer.css) */
+.footer {
+    background-color: var(--bg-dark); 
+    color: var(--text-medium);
+    text-align: center;
+    padding: 20px 40px;
+    margin-top: 15px; 
+    border-top: 1px solid var(--border-medium);
+    font-size: 0.9em;
+    flex-shrink: 0; /* Prevents footer from shrinking when body is a flex column */
+}
+
+.footer p {
+    margin: 0;
+}
+/* <-- end comment (.css file)(css/footer.css) */
