@@ -14,9 +14,9 @@
   <!-- Deployment Badges -->
   <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-Build_Tool-%2343853D.svg?style=for-the-badge&logo=node.js&logoColor=white" alt="NodeJS"></a>
   
-  <!-- This is the official badge link. It will work once the workflow runs. -->
+  <!-- MODIFICATION: This is the new, styled badge -->
   <a href="https://github.com/iamplayerexe/mastermind/actions/workflows/deploy.yml">
-    <img src="https://github.com/iamplayerexe/mastermind/actions/workflows/deploy.yml/badge.svg?branch=main" alt="GitHub Actions Status" style="height: 28px;">
+    <img src="https://img.shields.io/github/actions/workflow/status/iamplayerexe/mastermind/deploy.yml?branch=main&style=for-the-badge&label=Deployment&logo=githubactions&logoColor=white" alt="Deployment Status">
   </a>
 
   <!-- License Badge -->
