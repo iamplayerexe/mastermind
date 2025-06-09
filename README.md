@@ -13,7 +13,12 @@
   <a href="https://github.com/kitao/pyxel"><img src="https://img.shields.io/badge/Pyxel-Engine-%23FF6699.svg?style=for-the-badge" alt="Pyxel"></a>
   <!-- Deployment Badges -->
   <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-Build_Tool-%2343853D.svg?style=for-the-badge&logo=node.js&logoColor=white" alt="NodeJS"></a>
-  <a href="https://github.com/iamplayerexe/mastermind/actions/workflows/deploy.yml"><img src="https://img.shields.io/github/actions/workflow/status/iamplayerexe/mastermind/deploy.yml?branch=main&style=for-the-badge" alt="GitHub Actions Status"></a>
+  
+  <!-- This is the official badge link. It will work once the workflow runs. -->
+  <a href="https://github.com/iamplayerexe/mastermind/actions/workflows/deploy.yml">
+    <img src="https://github.com/iamplayerexe/mastermind/actions/workflows/deploy.yml/badge.svg?branch=main" alt="GitHub Actions Status" style="height: 28px;">
+  </a>
+
   <!-- License Badge -->
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License: MIT"></a>
 </p>
