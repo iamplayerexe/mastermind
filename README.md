@@ -20,7 +20,9 @@
   </a>
 
   <!-- License Badge -->
-  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License: MIT"></a>
+  <div align="center">
+    <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License: MIT"></a>
+  </div>
 </p>
 
 > A fully responsive web dashboard showcasing a classic Mastermind game. The game, originally built in Python with the Pyxel retro engine, is deployed to the web via WebAssembly and is playable on both desktop and mobile devices.
