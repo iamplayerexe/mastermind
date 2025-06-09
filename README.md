@@ -5,22 +5,7 @@
 </div>
 
 <p align="center">
-  <!-- Tech Stack Badges -->
-  <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5"><img src="https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"></a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://img.shields.io/badge/CSS3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"></a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"></a>
-  <a href="https://www.python.org"><img src="https://img.shields.io/badge/Python-3.x-%233776AB.svg?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a>
-  <a href="https://github.com/kitao/pyxel"><img src="https://img.shields.io/badge/Pyxel-Engine-%23FF6699.svg?style=for-the-badge" alt="Pyxel"></a>
-  <!-- Deployment Badges -->
-  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-Build_Tool-%2343853D.svg?style=for-the-badge&logo=node.js&logoColor=white" alt="NodeJS"></a>
-  
-  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License: MIT"></a>
-  
-  <!-- MODIFICATION: This is the new, styled badge -->
-  <a href="https://github.com/iamplayerexe/mastermind/actions/workflows/deploy.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/iamplayerexe/mastermind/deploy.yml?branch=main&style=for-the-badge&label=Deployment&logo=githubactions&logoColor=white" alt="Deployment Status">
-  </a> 
-  
+  <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5"><img src="https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"></a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://img.shields.io/badge/CSS3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"></a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"></a> <a href="https://www.python.org"><img src="https://img.shields.io/badge/Python-3.x-%233776AB.svg?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a> <a href="https://github.com/kitao/pyxel"><img src="https://img.shields.io/badge/Pyxel-Engine-%23FF6699.svg?style=for-the-badge" alt="Pyxel"></a> <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-Build_Tool-%2343853D.svg?style=for-the-badge&logo=node.js&logoColor=white" alt="NodeJS"></a> <a href="https://github.com/iamplayerexe/mastermind/actions/workflows/deploy.yml"><img src="https://img.shields.io/github/actions/workflow/status/iamplayerexe/mastermind/deploy.yml?branch=main&style=for-the-badge&label=Deployment&logo=githubactions&logoColor=white" alt="Deployment Status"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License: MIT"></a>
 </p>
 
 > A fully responsive web dashboard showcasing a classic Mastermind game. The game, originally built in Python with the Pyxel retro engine, is deployed to the web via WebAssembly and is playable on both desktop and mobile devices.
